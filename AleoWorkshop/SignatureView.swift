@@ -27,4 +27,5 @@ struct SignatureView: View {
 
 #Preview {
     SignatureView(source: "Aetna", signature: .init(""))
+    .modelContainer(for: [HealthRecord.self, Diagnosis.self, Medication.self], inMemory: true)
 }
