@@ -32,7 +32,7 @@ struct RequestView: View {
                 """)
                 .font(.title)
                 Spacer()
-                Button("Generate ZK Proof") {
+                Button("Generate ZK Proof (OFAC Clear)") {
                     signature = aleoManager.encrypt(healthRecord: records.first)
                 }
                 Button("Cancel") {

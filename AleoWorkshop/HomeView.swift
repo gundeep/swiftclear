@@ -20,7 +20,8 @@ struct HomeView: View {
     
     @State var selectedRequest: ShareRequest?
     @State var text = ""
-    
+    @State private var isTooltipVisible = false
+
     
     var body: some View {
         
@@ -42,13 +43,24 @@ struct HomeView: View {
         }
         
         VStack {
-            // Other views...
-
             TextField("Enter Wallet Address Here", text: $text)
                 .padding()
                 .border(Color.gray, width: 0.5)
-            
-            // Other views...
+                .gesture(LongPressGesture(minimumDuration: 0.5)
+                    .onChanged { _ in isTooltipVisible = true }
+                    .onEnded { _ in isTooltipVisible = false })
+                .overlay(
+                    Group {
+                        if isTooltipVisible {
+                            Text("Your wallet address will never leave the device")
+                                .padding()
+                                .background(Color.white)
+                                .foregroundColor(Color.black)
+                                .shadow(radius: 5)
+                                .offset(y: -50)
+                        }
+                    }, alignment: .topTrailing
+                )
         }
         // write code input field to view
         //

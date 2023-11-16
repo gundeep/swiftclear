@@ -16,7 +16,7 @@ struct SignatureView: View {
     
     var body: some View {
         VStack {
-            Text("You just shared your medical records with \(source). Here is your signature: ")
+            Text("You just shared Proof of KYC of your wallet with \(source). Here is your signature: ")
             Spacer()
             Text(signature.toString())
                 .padding(20)
