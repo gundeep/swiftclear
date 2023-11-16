@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18E6D4DD2B062B88007454EB /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 18E6D4DC2B062B88007454EB /* Algorithms */; };
 		FB7CD5C42B04BAA5009CBEC8 /* AleoWorkshopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7CD5C32B04BAA5009CBEC8 /* AleoWorkshopApp.swift */; };
 		FB7CD5C62B04BAA5009CBEC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7CD5C52B04BAA5009CBEC8 /* ContentView.swift */; };
 		FB7CD5C82B04BAA5009CBEC8 /* HealthRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7CD5C72B04BAA5009CBEC8 /* HealthRecord.swift */; };
@@ -45,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E6D4DD2B062B88007454EB /* Algorithms in Frameworks */,
 				FBA8B81F2B04CC4300D08E57 /* SimpleCodableClient in Frameworks */,
 				FBA8B8222B04E0EB00D08E57 /* Aleo in Frameworks */,
 				FBA8B81D2B04CC4300D08E57 /* SimpleCodable in Frameworks */,
@@ -125,6 +127,7 @@
 				FBA8B81C2B04CC4300D08E57 /* SimpleCodable */,
 				FBA8B81E2B04CC4300D08E57 /* SimpleCodableClient */,
 				FBA8B8212B04E0EB00D08E57 /* Aleo */,
+				18E6D4DC2B062B88007454EB /* Algorithms */,
 			);
 			productName = AleoWorkshop;
 			productReference = FB7CD5C02B04BAA5009CBEC8 /* AleoWorkshop.app */;
@@ -157,6 +160,7 @@
 			packageReferences = (
 				FB7CD5D32B04BAB9009CBEC8 /* XCRemoteSwiftPackageReference "aleo-swift" */,
 				FBA8B81B2B04CC4300D08E57 /* XCRemoteSwiftPackageReference "SimpleCodableMacro" */,
+				18E6D4DB2B062B88007454EB /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = FB7CD5C12B04BAA5009CBEC8 /* Products */;
 			projectDirPath = "";
@@ -403,6 +407,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		18E6D4DB2B062B88007454EB /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 		FB7CD5D32B04BAB9009CBEC8 /* XCRemoteSwiftPackageReference "aleo-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/huminelabs/aleo-swift.git";
@@ -422,6 +434,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		18E6D4DC2B062B88007454EB /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18E6D4DB2B062B88007454EB /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
 		FBA8B81C2B04CC4300D08E57 /* SimpleCodable */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FBA8B81B2B04CC4300D08E57 /* XCRemoteSwiftPackageReference "SimpleCodableMacro" */;

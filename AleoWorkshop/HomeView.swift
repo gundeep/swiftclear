@@ -32,6 +32,9 @@ struct HomeView: View {
                     }
                 }
                 .onDelete(perform: deleteRequest)
+                .sheet(item: $selectedRequest) { request in
+                    RequestView(shareRequest: request)
+                }
             }
             .navigationTitle("Welcome \(name)!")
         }
@@ -44,6 +47,7 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
+        .modelContainer(for: [HealthRecord.self, Diagnosis.self, Medication.self], inMemory: true)
         .environment(LocalAuthenticator())
         .environment(AleoManager())
 }
