@@ -41,11 +41,17 @@ class AleoManager {
         .synchronizable(true)
     
     func generateAccount() {
-        
+        guard let privateKey = PrivateKey(OWNER_PRIVATE_KEY) else
+        {   return }
+        let account = Account (privateKey: privateKey);
     }
     
     func decryptRecord() -> RecordPlaintext? {
-        return nil
+        guard let string = account?.decryptRecord(ciphertext: RECORD_CIPHERTEXT)
+        else {
+            return nil;
+        }
+        return RecordPlaintext(string);
     }
     
     func encrypt(healthRecord: HealthRecord?) -> Signature? {
@@ -54,7 +60,7 @@ class AleoManager {
         }
         
         let data = try? JSONEncoder().encode(healthRecord)
-        return nil
+        return Account.decryptRecord(<#T##self: Account##Account#>)
     }
 }
 
