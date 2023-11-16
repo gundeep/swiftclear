@@ -52,15 +52,14 @@ struct HomeView: View {
                             if isTooltipVisible {
                                 Text("Your wallet address will never leave the device")
                                     .padding()
-                                    .background(Color.white)
-                                    .foregroundStyle(Color.black)
-                                    .shadow(radius: 5)
+                                    .background(Color.green)
+                                    .foregroundStyle(Color.brown)
                                     .offset(y: -50)
                             }
                         }
                     }
             }
-            .navigationTitle("Welcome \(name)!")
+            .navigationTitle("iClear - Gundeep ").background(Color.green)
         }
     }
     

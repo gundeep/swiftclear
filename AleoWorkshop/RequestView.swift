@@ -39,10 +39,11 @@ struct RequestView: View {
                     // TODO
                 }
             }
-            .navigationTitle("Share Request")
+            .navigationTitle("Share Proof of OFAC Clear")
             .sheet(item: $signature, content: { signature in
                 SignatureView(source: shareRequest.source, signature: signature)
-            })
+
+            }).background(Color.red)
         }
     }
 }
@@ -51,7 +52,7 @@ struct RequestView: View {
 
 #Preview {
     
-    RequestView(shareRequest: ShareRequest(source: "Aetna", date: Date()))
+    RequestView(shareRequest: ShareRequest(source: "Metamask", date: Date()))
         .environment(LocalAuthenticator())
         .environment(AleoManager())
 }
