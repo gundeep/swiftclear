@@ -26,6 +26,6 @@ struct SignatureView: View {
 }
 
 #Preview {
-    SignatureView(source: "Aetna", signature: .init(""))
+    SignatureView(source: "Metamask", signature: .init(""))
     .modelContainer(for: [HealthRecord.self, Diagnosis.self, Medication.self], inMemory: true)
 }

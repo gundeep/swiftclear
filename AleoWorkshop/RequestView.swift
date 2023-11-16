@@ -30,7 +30,8 @@ struct RequestView: View {
                 Text("""
                 \(shareRequest.source)
                 """)
-                .font(.title)
+                .font(.custom("Noteworthy-Light", size: 20))
+                .bold()
                 Spacer()
                 Button("Generate ZK Proof (OFAC Clear)") {
                     signature = aleoManager.encrypt(healthRecord: records.first)
@@ -39,11 +40,13 @@ struct RequestView: View {
                     // TODO
                 }
             }
-            .navigationTitle("Share Proof of OFAC Clear")
+            .navigationTitle("Share Proof of OFAC Clear").font(.custom("Noteworthy-Light", size: 20)).underline()
+            .font(.custom("Noteworthy-Light", size: 20))
+            .bold()
             .sheet(item: $signature, content: { signature in
                 SignatureView(source: shareRequest.source, signature: signature)
 
-            }).background(Color.red)
+            }).background(Color.orange)
         }
     }
 }
