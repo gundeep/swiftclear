@@ -10,18 +10,20 @@ import SwiftUI
 import SwiftDate
 
 struct HomeView: View {
-    var name = "Jon"
+    var name = "Gundeep"
     
     var shareRequests: [ShareRequest] = [
-        ShareRequest(source: "Aetna", date: Date()),
-        ShareRequest(source: "Sun Life", date: Date()),
-        ShareRequest(source: "Manulife", date: Date()),
-        ShareRequest(source: "Blue Cross Blue Shield", date: Date())
+        ShareRequest(source: "Metamask", date: Date()),
+        ShareRequest(source: "Trust Wallet", date: Date()),
+        ShareRequest(source: "Aleo", date: Date()),
     ]
     
     @State var selectedRequest: ShareRequest?
+    @State var text = ""
+    
     
     var body: some View {
+        
         NavigationStack {
             List {
                 ForEach(shareRequests) { request in
@@ -38,11 +40,34 @@ struct HomeView: View {
             }
             .navigationTitle("Welcome \(name)!")
         }
+        
+        VStack {
+            // Other views...
+
+            TextField("Enter Wallet Address Here", text: $text)
+                .padding()
+                .border(Color.gray, width: 0.5)
+            
+            // Other views...
+        }
+        // write code input field to view
+        //
+         //let textField = UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
+         //textField.borderStyle = UITextField.BorderStyle.roundedRect
+         //textField.placeholder = "Enter text here"
+        //
+        //
+
+
+        //self.view.addSubview(textField)
     }
     
+
+
     func deleteRequest(_ indexSet: IndexSet?) {
         
     }
+    
 }
 
 #Preview {

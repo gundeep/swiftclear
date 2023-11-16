@@ -15,7 +15,7 @@ struct ContentView: View {
             HomeView()
                 .tabItem { Label("Home", systemImage: "house.fill") }
             MyDataView()
-                .tabItem { Label("Home", systemImage: "house.fill") }
+                .tabItem { Label("Data", systemImage: "folder.fill") }
         }
         .modelContainer(for: [HealthRecord.self, Diagnosis.self, Medication.self], inMemory: true)
     }
