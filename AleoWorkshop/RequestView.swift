@@ -47,11 +47,7 @@ struct RequestView: View {
     }
 }
 
-extension Signature: Identifiable {
-    var id: String {
-        return toString()
-    }
-}
+
 
 #Preview {
     

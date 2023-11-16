@@ -60,7 +60,7 @@ class AleoManager {
         }
         
         let data = try? JSONEncoder().encode(healthRecord)
-        return Account.decryptRecord(<#T##self: Account##Account#>)
+        return account?.sign(message: [UInt8(data?.hashValue ?? 0)])
     }
 }
 
