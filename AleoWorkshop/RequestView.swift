@@ -32,22 +32,29 @@ struct RequestView: View {
                 """)
                 .font(.title)
                 Spacer()
-                Button("") {
-                    // TODO
+                Button("Generate ZK Proof") {
+                    signature = aleoManager.encrypt(healthRecord: records.first)
                 }
                 Button("Cancel") {
                     // TODO
                 }
             }
+            .navigationTitle("Share Request")
             .sheet(item: $signature, content: { signature in
                 SignatureView(source: shareRequest.source, signature: signature)
             })
-            .navigationTitle("Share Request")
         }
     }
 }
 
+extension Signature: Identifiable {
+    var id: String {
+        return toString()
+    }
+}
+
 #Preview {
+    
     RequestView(shareRequest: ShareRequest(source: "Aetna", date: Date()))
         .environment(LocalAuthenticator())
         .environment(AleoManager())
