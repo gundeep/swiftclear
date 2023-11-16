@@ -15,7 +15,8 @@ struct RequestView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(AleoManager.self) var aleoManager
     @Environment(LocalAuthenticator.self) var authenticator
-    
+    @Environment(\.presentationMode) var presentationMode
+
     @Query private var records: [HealthRecord]
     
     var shareRequest: ShareRequest
@@ -37,7 +38,7 @@ struct RequestView: View {
                     signature = aleoManager.encrypt(healthRecord: records.first)
                 }
                 Button("Cancel") {
-                    // TODO
+                    presentationMode.wrappedValue.dismiss()
                 }
             }
             .navigationTitle("Share Proof of OFAC Clear").font(.custom("Noteworthy-Light", size: 20)).underline()
