@@ -38,13 +38,13 @@ const hello_hello_program =
         // execution significantly faster.
         let executionResponse = await programManager.run(
             hello_hello_program,
-            "hello",
-            ["5u32", "5u32"],
+            "iclear",
+            ["30u8", "aleo1j7qxyunfldj2lp8hsvy7mw5k8zaqgjfyr72x2gh3x4ewgae8v5gscf5jh3"],
             true,
             undefined,
             keyProviderParams,
         );
-        console.log("hello_hello/hello executed - result:", executionResponse.getOutputs());
+        console.log("hello_hello/iclear executed - result:", executionResponse.getOutputs());
     
         // Verify the execution using the verifying key that was generated earlier.
         if (programManager.verifyExecution(executionResponse)) {
