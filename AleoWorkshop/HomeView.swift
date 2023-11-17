@@ -31,7 +31,7 @@ struct HomeView: View {
                         Button {
                             selectedRequest = request
                         } label: {
-                            Text("Request from \(request.source) at \(request.date, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                            Text("Create Proof for \(request.source)")
                         }
                     }
                     .onDelete(perform: deleteRequest)
