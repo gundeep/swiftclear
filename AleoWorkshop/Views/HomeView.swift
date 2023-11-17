@@ -45,7 +45,7 @@ struct HomeView: View {
                     }
 
             }
-            Toggle("Proof OFAC Clear", isOn: $proofKYC)
+            Toggle("Proof OFAC clear", isOn: $proofKYC)
                 .toggleStyle(CheckboxToggleStyle())
                 .padding()
                 .offset(CGSize(width: 0.0, height: 35.0))
@@ -53,6 +53,7 @@ struct HomeView: View {
                 .toggleStyle(CheckboxToggleStyle())
                 .padding()
                 .offset(CGSize(width: 0.0, height: 10.0))
+            
 
             List {
                 ForEach(shareRequests) { request in
@@ -67,7 +68,7 @@ struct HomeView: View {
                     RequestView(shareRequest: request)
                 }
             }
-            .navigationTitle("iClear - Gundeep ").background(Color.green)
+            .navigationTitle("iClear - Gundeep").background(Color.green)
         }
     }
     

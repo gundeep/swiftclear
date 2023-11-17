@@ -15,7 +15,7 @@ struct ContentView: View {
             HomeView()
                 .tabItem { Label("Home", systemImage: "house.fill") }
             MyDataView()
-                .tabItem { Label("Data", systemImage: "bell.fill") }
+                .tabItem { Label("Data", systemImage: "chart.bar.doc.horizontal.fill") }
         }
         .modelContainer(for: [HealthRecord.self, Diagnosis.self, Medication.self], inMemory: true)
         .background(Color.green)

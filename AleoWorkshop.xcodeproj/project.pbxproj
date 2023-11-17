@@ -11,7 +11,7 @@
 		188C69892B079B9100179412 /* iClearCloudHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C69882B079B9100179412 /* iClearCloudHost.swift */; };
 		188C698B2B079C1400179412 /* iClearCloudPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C698A2B079C1400179412 /* iClearCloudPath.swift */; };
 		18E6D4DD2B062B88007454EB /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 18E6D4DC2B062B88007454EB /* Algorithms */; };
-		FB7CD5C42B04BAA5009CBEC8 /* AleoWorkshopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7CD5C32B04BAA5009CBEC8 /* AleoWorkshopApp.swift */; };
+		FB7CD5C42B04BAA5009CBEC8 /* iClearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7CD5C32B04BAA5009CBEC8 /* iClearApp.swift */; };
 		FB7CD5C62B04BAA5009CBEC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7CD5C52B04BAA5009CBEC8 /* ContentView.swift */; };
 		FB7CD5C82B04BAA5009CBEC8 /* HealthRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7CD5C72B04BAA5009CBEC8 /* HealthRecord.swift */; };
 		FB7CD5CA2B04BAA9009CBEC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB7CD5C92B04BAA9009CBEC8 /* Assets.xcassets */; };
@@ -33,7 +33,7 @@
 		188C69882B079B9100179412 /* iClearCloudHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iClearCloudHost.swift; sourceTree = "<group>"; };
 		188C698A2B079C1400179412 /* iClearCloudPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iClearCloudPath.swift; sourceTree = "<group>"; };
 		FB7CD5C02B04BAA5009CBEC8 /* AleoWorkshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AleoWorkshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB7CD5C32B04BAA5009CBEC8 /* AleoWorkshopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AleoWorkshopApp.swift; sourceTree = "<group>"; };
+		FB7CD5C32B04BAA5009CBEC8 /* iClearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iClearApp.swift; sourceTree = "<group>"; };
 		FB7CD5C52B04BAA5009CBEC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FB7CD5C72B04BAA5009CBEC8 /* HealthRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRecord.swift; sourceTree = "<group>"; };
 		FB7CD5C92B04BAA9009CBEC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		FB7CD5C22B04BAA5009CBEC8 /* AleoWorkshop */ = {
 			isa = PBXGroup;
 			children = (
-				FB7CD5C32B04BAA5009CBEC8 /* AleoWorkshopApp.swift */,
+				FB7CD5C32B04BAA5009CBEC8 /* iClearApp.swift */,
 				188C69862B079B2200179412 /* ViewModel */,
 				188C69852B079B1000179412 /* Models */,
 				188C69842B079B0000179412 /* Views */,
@@ -237,7 +237,7 @@
 				FB7CD5D72B04BB66009CBEC8 /* HomeView.swift in Sources */,
 				188C69832B079AE000179412 /* iClearCloudService.swift in Sources */,
 				FBA8B8242B04E14800D08E57 /* RequestView.swift in Sources */,
-				FB7CD5C42B04BAA5009CBEC8 /* AleoWorkshopApp.swift in Sources */,
+				FB7CD5C42B04BAA5009CBEC8 /* iClearApp.swift in Sources */,
 				FBA8B8262B04E55800D08E57 /* SignatureView.swift in Sources */,
 				188C69892B079B9100179412 /* iClearCloudHost.swift in Sources */,
 				FB7CD5D92B04BBE7009CBEC8 /* LocalAuthenticator.swift in Sources */,

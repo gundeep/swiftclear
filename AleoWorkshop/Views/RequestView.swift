@@ -3,7 +3,7 @@
 //  AleoWorkshop
 //
 //  Created by Nafeh Shoaib on 11/15/23.
-//
+//  Modified by Gundeep SIngh
 
 import SwiftUI
 import SwiftData
@@ -36,9 +36,9 @@ struct RequestView: View {
                 .font(.custom("Noteworthy-Light", size: 20))
                 .bold()
                 Spacer()
-                Button("Generate ZK Proof (OFAC)") {
+                Button("Generate ZK Proof") {
                     signature = aleoManager.encrypt(healthRecord: records.first)
-                }
+                }.background(Color.yellow)
                 Button("Cancel") {
                     presentationMode.wrappedValue.dismiss()
                 }
@@ -49,15 +49,13 @@ struct RequestView: View {
             .sheet(item: $signature, content: { signature in
                 SignatureView(source: shareRequest.source, signature: signature)
 
-            }).background(Color.orange)
+            })
         }
     }
 }
 
 
-
 #Preview {
-    
     RequestView(shareRequest: ShareRequest(source: "Metamask", date: Date()))
         .environment(LocalAuthenticator())
         .environment(AleoManager())
