@@ -30,6 +30,8 @@ struct AleoWorkshopApp: App {
             ContentView()
                 .environment(AleoManager())
                 .environment(LocalAuthenticator())
+                .environment(\.colorScheme, .light)
+                                .background(Color.green.ignoresSafeArea())
         }
         .modelContainer(sharedModelContainer)
     }

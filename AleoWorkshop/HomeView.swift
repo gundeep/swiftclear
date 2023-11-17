@@ -20,44 +20,52 @@ struct HomeView: View {
     
     @State var selectedRequest: ShareRequest?
     @State var text = ""
-    @State private var isTooltipVisible = false
-    
+    @State private var isTooltipVisible = true
+    @State private var proofKYC = false
+    @State private var proveOFACClear = false
+    @State private var proof1ETH = false
     
     var body: some View {
         NavigationStack {
             ZStack(alignment: .center) {
-                List {
-                    ForEach(shareRequests) { request in
-                        Button {
-                            selectedRequest = request
-                        } label: {
-                            Text("Create Proof for \(request.source)")
-                        }
-                    }
-                    .onDelete(perform: deleteRequest)
-                    .sheet(item: $selectedRequest) { request in
-                        RequestView(shareRequest: request)
-                    }
-                }
+                
                 TextField("Enter Wallet Address Here", text: $text)
                     .padding()
                     .border(Color.gray, width: 0.5)
-                    .gesture(
-                        LongPressGesture(minimumDuration: 0.5)
-                            .onChanged { _ in isTooltipVisible = true }
-                            .onEnded { _ in isTooltipVisible = false }
-                    )
                     .overlay(alignment: .topTrailing) {
                         Group {
                             if isTooltipVisible {
                                 Text("Your wallet address will never leave the device")
                                     .padding()
                                     .background(Color.green)
-                                    .foregroundStyle(Color.brown)
-                                    .offset(y: -50)
+                                    .foregroundStyle(Color.black)
+                                    .offset(y: 50)
                             }
                         }
                     }
+
+            }
+            Toggle("Proof OFAC Clear", isOn: $proofKYC)
+                .toggleStyle(CheckboxToggleStyle())
+                .padding()
+                .offset(CGSize(width: 0.0, height: 35.0))
+            Toggle("Proof KYC done", isOn: $proveOFACClear)
+                .toggleStyle(CheckboxToggleStyle())
+                .padding()
+                .offset(CGSize(width: 0.0, height: 10.0))
+
+            List {
+                ForEach(shareRequests) { request in
+                    Button {
+                        selectedRequest = request
+                    } label: {
+                        Text("Create Proof for \(request.source)")
+                    }
+                }
+                .onDelete(perform: deleteRequest)
+                .sheet(item: $selectedRequest) { request in
+                    RequestView(shareRequest: request)
+                }
             }
             .navigationTitle("iClear - Gundeep ").background(Color.green)
         }
@@ -65,7 +73,22 @@ struct HomeView: View {
     
     func deleteRequest(_ indexSet: IndexSet?) {
     }
-    
+}
+
+struct CheckboxToggleStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        HStack {
+            configuration.label
+
+            Spacer()
+
+            Image(systemName: configuration.isOn ? "checkmark.square" : "square")
+                .resizable()
+                .frame(width: 20, height: 20)
+                .foregroundColor(configuration.isOn ? .green : .gray)
+                .onTapGesture { configuration.isOn.toggle() }
+        }
+    }
 }
 
 #Preview {
