@@ -30,20 +30,54 @@ let SERIAL_NUMBER = "81706195070756471511992390496532351870426617446914586447510
 
 @Observable
 class AleoManager {
-    var account: Account?
+    var account: Account? {
+        get {
+            guard let ciphertext = keychain["aleoAccount"],
+                  let password = password else {
+                return nil
+            }
+            
+            return Account(ciphertext: ciphertext, password: password)
+        }
+        set {
+            guard let password = password else {
+                return
+            }
+            
+            let encrypted = newValue?.encryptAccount(with: password)
+            
+            keychain["aleoAccount"] = encrypted?.toString()
+        }
+    }
+    
+    private var password: String? {
+        get {
+            return keychain["aleoPassword"]
+        }
+        set {
+            keychain["aleoPassword"] = newValue
+        }
+    }
     
     private var aleoCloudClient: AleoCloudClient = .init(serverURL: .testnet3)
     
     private var keychain: Keychain = Keychain(
-            server: AleoCloudHost.testnet3.urlString,
-            protocolType: .https
-        )
+        server: AleoCloudHost.testnet3.urlString,
+        protocolType: .https
+    )
         .synchronizable(true)
     
     func generateAccount() {
-        guard let privateKey = PrivateKey(OWNER_PRIVATE_KEY) else
-        {   return }
-        let account = Account (privateKey: privateKey);
+        let privateKey = PrivateKey()
+        
+        let account = Account(privateKey: privateKey)
+        
+        
+        password = "mySuperSecurePassword"
+        
+        self.account = account
+        
+        print("Successfully created account")
     }
     
     func decryptRecord() -> RecordPlaintext? {

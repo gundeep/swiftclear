@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		188C69832B079AE000179412 /* iClearCloudService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C69822B079AE000179412 /* iClearCloudService.swift */; };
+		188C69892B079B9100179412 /* iClearCloudHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C69882B079B9100179412 /* iClearCloudHost.swift */; };
+		188C698B2B079C1400179412 /* iClearCloudPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C698A2B079C1400179412 /* iClearCloudPath.swift */; };
 		18E6D4DD2B062B88007454EB /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 18E6D4DC2B062B88007454EB /* Algorithms */; };
 		FB7CD5C42B04BAA5009CBEC8 /* AleoWorkshopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7CD5C32B04BAA5009CBEC8 /* AleoWorkshopApp.swift */; };
 		FB7CD5C62B04BAA5009CBEC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7CD5C52B04BAA5009CBEC8 /* ContentView.swift */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		188C69822B079AE000179412 /* iClearCloudService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iClearCloudService.swift; sourceTree = "<group>"; };
+		188C69882B079B9100179412 /* iClearCloudHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iClearCloudHost.swift; sourceTree = "<group>"; };
+		188C698A2B079C1400179412 /* iClearCloudPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iClearCloudPath.swift; sourceTree = "<group>"; };
 		FB7CD5C02B04BAA5009CBEC8 /* AleoWorkshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AleoWorkshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB7CD5C32B04BAA5009CBEC8 /* AleoWorkshopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AleoWorkshopApp.swift; sourceTree = "<group>"; };
 		FB7CD5C52B04BAA5009CBEC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +62,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		188C69842B079B0000179412 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FBA8B8252B04E55800D08E57 /* SignatureView.swift */,
+				FBA8B8232B04E14800D08E57 /* RequestView.swift */,
+				FB7CD5D62B04BB66009CBEC8 /* HomeView.swift */,
+				FB7CD5D42B04BB26009CBEC8 /* MyDataView.swift */,
+				FB7CD5C52B04BAA5009CBEC8 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		188C69852B079B1000179412 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FB7CD5C72B04BAA5009CBEC8 /* HealthRecord.swift */,
+				FB7CD5DE2B04C656009CBEC8 /* ShareRequest.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		188C69862B079B2200179412 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FB7CD5D82B04BBE7009CBEC8 /* LocalAuthenticator.swift */,
+				FB7CD5DA2B04BBF2009CBEC8 /* AleoManager.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		188C69872B079B7300179412 /* Cloud */ = {
+			isa = PBXGroup;
+			children = (
+				188C69822B079AE000179412 /* iClearCloudService.swift */,
+				188C69882B079B9100179412 /* iClearCloudHost.swift */,
+				188C698A2B079C1400179412 /* iClearCloudPath.swift */,
+			);
+			path = Cloud;
+			sourceTree = "<group>";
+		};
 		FB7CD5B72B04BAA5009CBEC8 = {
 			isa = PBXGroup;
 			children = (
@@ -77,17 +123,12 @@
 			isa = PBXGroup;
 			children = (
 				FB7CD5C32B04BAA5009CBEC8 /* AleoWorkshopApp.swift */,
-				FB7CD5C52B04BAA5009CBEC8 /* ContentView.swift */,
-				FB7CD5D42B04BB26009CBEC8 /* MyDataView.swift */,
-				FB7CD5D62B04BB66009CBEC8 /* HomeView.swift */,
-				FB7CD5C72B04BAA5009CBEC8 /* HealthRecord.swift */,
+				188C69862B079B2200179412 /* ViewModel */,
+				188C69852B079B1000179412 /* Models */,
+				188C69842B079B0000179412 /* Views */,
+				188C69872B079B7300179412 /* Cloud */,
 				FB7CD5C92B04BAA9009CBEC8 /* Assets.xcassets */,
 				FB7CD5CB2B04BAA9009CBEC8 /* Preview Content */,
-				FB7CD5D82B04BBE7009CBEC8 /* LocalAuthenticator.swift */,
-				FB7CD5DA2B04BBF2009CBEC8 /* AleoManager.swift */,
-				FB7CD5DE2B04C656009CBEC8 /* ShareRequest.swift */,
-				FBA8B8232B04E14800D08E57 /* RequestView.swift */,
-				FBA8B8252B04E55800D08E57 /* SignatureView.swift */,
 			);
 			path = AleoWorkshop;
 			sourceTree = "<group>";
@@ -192,10 +233,13 @@
 				FB7CD5DF2B04C656009CBEC8 /* ShareRequest.swift in Sources */,
 				FB7CD5C82B04BAA5009CBEC8 /* HealthRecord.swift in Sources */,
 				FB7CD5D52B04BB26009CBEC8 /* MyDataView.swift in Sources */,
+				188C698B2B079C1400179412 /* iClearCloudPath.swift in Sources */,
 				FB7CD5D72B04BB66009CBEC8 /* HomeView.swift in Sources */,
+				188C69832B079AE000179412 /* iClearCloudService.swift in Sources */,
 				FBA8B8242B04E14800D08E57 /* RequestView.swift in Sources */,
 				FB7CD5C42B04BAA5009CBEC8 /* AleoWorkshopApp.swift in Sources */,
 				FBA8B8262B04E55800D08E57 /* SignatureView.swift in Sources */,
+				188C69892B079B9100179412 /* iClearCloudHost.swift in Sources */,
 				FB7CD5D92B04BBE7009CBEC8 /* LocalAuthenticator.swift in Sources */,
 				FB7CD5DB2B04BBF2009CBEC8 /* AleoManager.swift in Sources */,
 			);

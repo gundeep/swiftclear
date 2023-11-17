@@ -18,9 +18,9 @@ struct MyDataView: View {
             List {
                 ForEach(records) { record in
                     NavigationLink {
-                        Text("Health Record at \(record.dateStamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        Text("KYC Proof at \(record.dateStamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
                     } label: {
-                        Text(record.dateStamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        Text("KYC \(record.dateStamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
                     }
                 }
                 .onDelete(perform: deleteItems)
